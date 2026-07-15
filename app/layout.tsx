@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "تسک لایو کدینگ شرکت همیار حامی",
+  title: "تسک لایو کدینگ",
 };
 
 export default function RootLayout({
