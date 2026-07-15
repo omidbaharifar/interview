@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# تسک لایو کدینگ همیار حامی - سیستم کامنت تو در تو
 
-## Getting Started
+## هدف
 
-First, run the development server:
+در این تسک یک پروژه جدید با Next.js ایجاد کنید و در صفحه اصلی، یک سیستم
+نمایش کامنت‌های تو در تو (Nested Comments) پیاده‌سازی کنید.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+تمرکز اصلی این تسک روی کیفیت کدنویسی، طراحی کامپوننت‌ها و مدیریت State
+است.
+
+------------------------------------------------------------------------
+
+## داده اولیه
+
+کار را با داده زیر شروع کنید:
+
+``` js
+[
+  {
+    id: 1,
+    text: "React",
+    replies: [
+      {
+        id: 2,
+        text: "Next.js",
+        replies: [
+          {
+            id: 3,
+            text: "TypeScript",
+            replies: [],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 4,
+    text: "Vue",
+    replies: [],
+  },
+]
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+------------------------------------------------------------------------
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## نیازمندی‌ها
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1. نمایش کامنت‌ها
 
-## Learn More
+-   همه کامنت‌ها نمایش داده شوند.
+-   پاسخ‌ها (Replies) به صورت تو در تو نمایش داده شوند.
+-   عمق پاسخ‌ها نامحدود است.
 
-To learn more about Next.js, take a look at the following resources:
+------------------------------------------------------------------------
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 2. قابلیت Reply
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+برای هر کامنت یک دکمه **Reply** نمایش داده شود.
 
-## Deploy on Vercel
+با کلیک روی آن:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+-   یک Input برای وارد کردن متن پاسخ نمایش داده شود.
+-   با فشردن Enter یا کلیک روی دکمه Add، پاسخ جدید به همان کامنت اضافه
+    شود.
+-   پس از ثبت پاسخ، فرم بسته و Input پاک شود.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+------------------------------------------------------------------------
+
+### 3. ظاهر
+
+استایل‌دهی با Tailwind CSS انجام شود.
+
+نیازی به طراحی پیچیده نیست؛ کافی است:
+
+-   ساختار درختی مشخص باشد.
+-   پاسخ‌ها با کمی فاصله یا Border از والد قابل تشخیص باشند.
+-   رابط کاربری خوانا باشد.
+
+------------------------------------------------------------------------
+
+## محدودیت‌ها
+
+-   از کتابخانه‌های آماده برای نمایش Tree یا Comment استفاده نکنید.
+-   مدیریت State با امکانات خود React انجام شود.
+-   داده اولیه باید قابل تغییر باشد و بعد از افزودن پاسخ، رابط کاربری
+    به‌روزرسانی شود.
+
+------------------------------------------------------------------------
+
+## مواردی که در ارزیابی بررسی می‌شوند
+
+-   طراحی کامپوننت‌ها
+-   مدیریت State
+-   استفاده صحیح از React
+-   خوانایی و ساختار کد
+-   مدیریت داده‌های تو در تو
+-   استفاده مناسب از TypeScript
+-   رعایت اصول Immutable Update
